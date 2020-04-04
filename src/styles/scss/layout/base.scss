@@ -10,13 +10,14 @@ html {
 }
 
 body {
-  font-family: 'Open Sans', Helvetica, sans-serif;
-  font-size: 20px;
-  color: $mainBlue;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 0;
+  font-family: 'Open Sans', Helvetica, sans-serif;
+  font-size: 20px;
+  color: $mainBlue;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
