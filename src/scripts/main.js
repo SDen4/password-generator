@@ -1,4 +1,10 @@
 let doc = document;
+let generateStr = doc.getElementById("generate");
+let copyStrBtn = doc.getElementById('copyStr');
+let genNewCodeStr = doc.getElementById('result');
+let buttonState = doc.querySelector('#addSymb');
+let buttonName = doc.querySelector(".check_text");
+
 
 //------------- Checking for a number of entering a string length -------------//
 doc.getElementById('strLength').onkeydown = function (e) {
@@ -8,8 +14,8 @@ doc.getElementById('strLength').onkeydown = function (e) {
 function strRnd() {
 	let j = doc.getElementById('strLength').value,
 		arr = [];
-	for (var i = 0; i < j; i++) {
-		var number = Math.floor(Math.random() * 10),
+	for (let i = 0; i < j; i++) {
+		let number = Math.floor(Math.random() * 10),
 			character = String.fromCharCode(Math.floor(97 + Math.random() * 26)), //random letter. Code: 97-122
 			characterUporDown = character.toUpperCase(),
 			addSymbBtn = doc.getElementById('addSymb'),
@@ -39,14 +45,21 @@ function strRnd() {
 	return arr.join('');
 };
 
-let generateStr = doc.getElementById("generate");
+buttonState.addEventListener('click', () => {
+    if(buttonState.checked) {
+        buttonName.textContent = "no"
+    } else {
+        buttonName.textContent = "yes"
+    }
+});
+
 generateStr.addEventListener('click', function () {
-	let genNewCodeStr = doc.getElementById('result');
+    copyStrBtn.style.display = "block";
 	genNewCodeStr.innerHTML = strRnd();
 });
 
 //copy the string
-var copyStrBtn = doc.getElementById('copyStr');
+
 copyStrBtn.addEventListener('click', function () {
 	doc.getSelection().setBaseAndExtent(result, 0, result, result.childNodes.length);
 	doc.execCommand('copy');
@@ -54,7 +67,7 @@ copyStrBtn.addEventListener('click', function () {
 
 //symbols
 function fn1() {
-	var arrAddSymbols = [33, 64, 35, 36, 37, 94, 38, 42, 40, 41, 95, 43, 61, 45, 63, 58, 59, 8470, 46, 44, 62, 124, 47, 93, 91, 123, 125];
-	var ranAddSymb = arrAddSymbols[Math.floor(Math.random() * arrAddSymbols.length)];
+	let arrAddSymbols = [33, 64, 35, 36, 37, 94, 38, 42, 40, 41, 95, 43, 61, 45, 63, 58, 59, 8470, 46, 44, 62, 124, 47, 93, 91, 123, 125];
+	let ranAddSymb = arrAddSymbols[Math.floor(Math.random() * arrAddSymbols.length)];
 	return String.fromCharCode(ranAddSymb);
 };
