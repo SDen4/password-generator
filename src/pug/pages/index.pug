@@ -13,13 +13,13 @@ html(lang='en')
         h3.subTitle Enter password length
         input#strLength(type='text/number', placeholder='number', title='Enter the length of the string')
       .box
-        h3.subTitle Add symbols?
+        h3.subTitle Symbols:
         label.check
           input#addSymb.check_elem(type='checkbox')
-          .check_text yes!
+          .check_text no
       .box.topBox
         button#generate.button(title='Generate a new string') Generate
       .box.resultBox
         p#result(title='Code string')
       .box.topBox
-        button#copyStr.button(title='copy to clipboard') Copy string
+        button#copyStr.button(title='copy to clipboard') Copy password

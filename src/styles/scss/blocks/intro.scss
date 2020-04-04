@@ -22,13 +22,14 @@
 }
 
 .box {
-    height: 10%;
+    height: 5%;
     width: 50%;
     justify-content: flex-start;
 }
 
 .topBox {
     justify-content: center;
+    height: 10%;
 }
 
 #strLength {
@@ -60,11 +61,6 @@
     border-radius: $borderRadius;
 }
 
-.resultBox {
-    justify-content: center;
-    height: 33px;
-}
-
 .check {
     display: inline-block;
 }
@@ -92,9 +88,9 @@
 }
 
 .resultBox {
+    justify-content: center;
     width: 100%;
-    height: fit-content;
-    display: block;
+    height: 33px;
 }
 
 #result {

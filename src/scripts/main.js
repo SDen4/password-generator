@@ -6,11 +6,12 @@ let buttonState = doc.querySelector('#addSymb');
 let buttonName = doc.querySelector(".check_text");
 
 
-//------------- Checking for a number of entering a string length -------------//
+//Checking for a number of entering a string length
 doc.getElementById('strLength').onkeydown = function (e) {
 	return !(/^[А-ЯЁёа-яA-Za-z -!@#$%^&*('№"`~[-^)_+=;:{}\|/?><,-.]$/.test(e.key));
 };
 
+//random function
 function strRnd() {
 	let j = doc.getElementById('strLength').value,
 		arr = [];
@@ -45,21 +46,22 @@ function strRnd() {
 	return arr.join('');
 };
 
+//name of symbols button
 buttonState.addEventListener('click', () => {
     if(buttonState.checked) {
-        buttonName.textContent = "no"
-    } else {
         buttonName.textContent = "yes"
+    } else {
+        buttonName.textContent = "no"
     }
 });
 
+//appear copy string button
 generateStr.addEventListener('click', function () {
-    copyStrBtn.style.display = "block";
-	genNewCodeStr.innerHTML = strRnd();
+    genNewCodeStr.innerHTML = strRnd();
+    if(genNewCodeStr.textContent) {copyStrBtn.style.display = "block"};
 });
 
 //copy the string
-
 copyStrBtn.addEventListener('click', function () {
 	doc.getSelection().setBaseAndExtent(result, 0, result, result.childNodes.length);
 	doc.execCommand('copy');
