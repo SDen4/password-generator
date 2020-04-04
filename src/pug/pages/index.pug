@@ -7,17 +7,18 @@ html(lang='en')
     title Password Generator
   body
     .wrapper
-      .topBox
+      .title
         h1 Generation random code string
-      .topBox
-        h3 Enter the length of the string
-        input#strLength(type='text/number', placeholder='number', title='Enter the length of the string')
-        label.check
-          input#addSymb.check_elem(type='checkbox')
-        .check_text Add symbols
-      div
-        button#generate.ButtonG(title='Generate a new string') Generate
+      .box.topBox
+        h3.subTitle Enter the length of the string
+        .topBox__right
+          input#strLength(type='text/number', placeholder='number', title='Enter the length of the string')
+          label.check
+            input#addSymb.check_elem(type='checkbox')
+            .check_text Add symbols
+      .box.middleBox
+        button#generate.button(title='Generate a new string') Generate
       .resultBox
         p#result(title='Code string')
-      div
-        button#copyStr.ButtonG(title='copy to clipboard') Copy string
+      .box.downBox
+        button#copyStr.button(title='copy to clipboard') Copy string
