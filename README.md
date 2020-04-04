@@ -7,4 +7,4 @@ $ cd password-generator.
 $ npm i
 $ npm run dev
 ```
-# Watch on [github-pages](<link>)
+# Watch on [github-pages](https://sden4.github.io/password-generator/dist)

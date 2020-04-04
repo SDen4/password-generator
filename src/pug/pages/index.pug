@@ -4,18 +4,17 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(http-equiv='X-UA-Compatible', content='ie=edge')
-    link(rel='stylesheet', href='./index.css')
     title Password Generator
   body
-    .allBox
+    .wrapper
       .topBox
         h1 Generation random code string
       .topBox
-        h4 Enter the length of the string
+        h3 Enter the length of the string
         input#strLength(type='text/number', placeholder='number', title='Enter the length of the string')
         label.check
           input#addSymb.check_elem(type='checkbox')
-          .check_text Add symbols
+        .check_text Add symbols
       div
         button#generate.ButtonG(title='Generate a new string') Generate
       .resultBox
