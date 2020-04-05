@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-evenly;
     width: 90%;
-    height: 90%;
+    min-height: 90vh;
     background-color: $BGColor;
     border: 5px solid $borderBlue;
     border-radius: $borderRadius;
@@ -17,6 +17,7 @@
     position: relative;
     height: 5%;
     width: 50%;
+    margin-bottom: 2%;
     @include laptop {
         width: 95%;
     }
@@ -36,7 +37,7 @@
 
 .generate {
     justify-content: center;
-    height: 10%;
+    min-height: 29px;
 }
 
 #strLength {
@@ -105,7 +106,8 @@
 .result {
     justify-content: center;
     width: 96%;
-    min-height: 33px;
+    min-height: 200px;
+    height: fit-content;
 }
 
 #generate {
