@@ -17,14 +17,21 @@
     position: relative;
     height: 5%;
     width: 50%;
+    @include laptop {
+        width: 95%;
+    }
 }
 
 .title {
     justify-content: center;
+    @include smartphone {
+        margin-bottom: 40px;
+    }
 }
 
 .subTitle {
     margin-right: 3%;
+    text-align: start;
 }
 
 .generate {
