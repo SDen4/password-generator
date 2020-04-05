@@ -1,9 +1,11 @@
-let doc = document;
-let generateStr = doc.getElementById("generate");
-let copyStrBtn = doc.getElementById('copyStr');
-let genNewCodeStr = doc.getElementById('result');
-let buttonState = doc.querySelector('#addSymb');
-let buttonName = doc.querySelector(".check_text");
+const doc = document,
+	generateStr = doc.getElementById("generate"),
+	copyStrBtn = doc.getElementById('copyStr'),
+	genNewCodeStr = doc.getElementById('result'),
+	buttonState = doc.querySelector('#addSymb'),
+	buttonName = doc.querySelector(".check_text"),
+	errorBlock = doc.querySelector(".error");
+
 
 
 //Checking for a number of entering a string length
@@ -58,7 +60,12 @@ buttonState.addEventListener('click', () => {
 //appear copy string button
 generateStr.addEventListener('click', function () {
     genNewCodeStr.innerHTML = strRnd();
-    if(genNewCodeStr.textContent) {copyStrBtn.style.display = "block"};
+	if(genNewCodeStr.textContent) {
+		copyStrBtn.style.display = "block";
+		errorBlock.style.display = "none";
+	} else {
+		errorBlock.style.display = "block";
+	};
 });
 
 //copy the string

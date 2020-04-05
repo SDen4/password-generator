@@ -10,24 +10,24 @@
     border-radius: $borderRadius;
 }
 
-.title, .box {
+.box {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    height: 10%;
+    position: relative;
+    height: 5%;
+    width: 50%;
+}
+
+.title {
+    justify-content: center;
 }
 
 .subTitle {
     margin-right: 3%;
 }
 
-.box {
-    height: 5%;
-    width: 50%;
-    justify-content: flex-start;
-}
-
-.topBox {
+.generate {
     justify-content: center;
     height: 10%;
 }
@@ -42,27 +42,46 @@
     border-radius: $borderRadius;
 }
 
-.button {
+.error {
+    display: none;
+    position: absolute;
+    top: 43px;
+    left: 262px;
+    background-color: $error;
+    color: $BGColor;
+    padding: 3px 5px;
+    border-radius: $borderRadius;
+    &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -8px;
+        left: 40px;
+        width: 15px;
+        height: 15px;
+        transform: rotate(45deg);
+        background-color: inherit;
+    }
+}
+
+.button, .check_text {
     background-color: $buttonBGColor;
     border: 2px groove $borderBlue;
     border-radius: $borderRadius;
+    color: $mainBlue;
     font-size: 20px;
+    cursor: pointer;
     transition: .5s;
     outline: none;
+    min-width: 100px;
+    &:hover {
+        background-color: $hoverBlue;
+        border-radius: $borderRadius;
+    }
     &:active {
         background-color: $activeBlue;
         color: $BGColor;
     }
-}
-
-.button:hover,
-.check_text:hover {
-    background-color: $hoverBlue;
-    border-radius: $borderRadius;
-}
-
-.check {
-    display: inline-block;
 }
 
 .check_elem {
@@ -71,26 +90,19 @@
     top: 0;
 }
 
-.check_text {
-    width: 130px;
-    color: $mainBlue;
-    background-color: $buttonBGColor;
-    border: 2px groove $borderBlue;
-    border-radius: $borderRadius;
-    cursor: pointer;
-    transition: .5s;
-}
-
 .check_elem:checked+.check_text {
     background-color: $activeBlue;
     color: $BGColor;
-    border-radius: $borderRadius;
 }
 
-.resultBox {
+.result {
     justify-content: center;
-    width: 100%;
-    height: 33px;
+    width: 96%;
+    min-height: 33px;
+}
+
+#generate {
+    font-size: 32px;
 }
 
 #result {
